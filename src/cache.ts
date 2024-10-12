@@ -67,13 +67,12 @@ export class Cache {
     }
     if (!this.indexInitialized) {
         console.log("Initializing ANN index for the first embedding...");
-        this.annIndex.initIndex(1000);  // Initialize with capacity 1000
+        this.annIndex.initIndex(1000);  // Initialize with capacity 1000 - Assumption, needs to change
         this.indexInitialized = true;
       }
       const currentCount = this.annIndex.getCurrentCount();
       const maxElements = this.annIndex.getMaxElements();
       if (currentCount >= maxElements) {
-        console.log(`Resizing index from ${maxElements} to ${maxElements + 1000}`);
         this.annIndex.resizeIndex(maxElements + 1000);
       }
       this.annIndex.addPoint(embedding, id);

@@ -5,7 +5,7 @@ export class API {
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: options.model || 'gpt-3.5-turbo',
+        model: options.model || 'gpt-4o-mini-2024-07-18',
         messages: [{ role: 'user', content: prompt }],
       },
       {
