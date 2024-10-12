@@ -21,13 +21,12 @@ async function main() {
       embeddingSize: 1536,
     },
   });
-
   await cache.initialize();
-
   const queries = [
     'My Anycubic 3d printer is not running',
     'My Anycubic 3d printer seems off, it is having a hard time running.',
     'My Anycubic 3d printer is not working properly',
+    'Who is geoffrey hinto?',
   ];
 
   let context = "I have an anycubic printer that seems off"
