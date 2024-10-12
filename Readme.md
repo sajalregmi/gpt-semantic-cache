@@ -92,7 +92,7 @@ const cache = new SemanticGPTCache({
   },
   gptOptions: {
     openAIApiKey: 'YOUR_OPENAI_API_KEY',
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-3.5-turbo', // GPT model to use to query gpt if cache misses
     promptPrefix: 'You are an AI assistant.',
   },
   cacheOptions: {
@@ -115,7 +115,7 @@ await cache.initialize();
 
 - **gptOptions**:
   - `openAIApiKey`: Your OpenAI API key for accessing the GPT model.
-  - `model`: The GPT model to use (e.g., `'gpt-3.5-turbo'`).
+  - `model`: The GPT model to use (e.g., `'gpt-3.5-turbo'`) in case of cache miss.
   - `promptPrefix`: An optional string to prepend to every prompt sent to the GPT model.
 
 - **cacheOptions**:
