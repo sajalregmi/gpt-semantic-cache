@@ -1,6 +1,5 @@
 export function preprocessText(text: string): string {
-    // Implement any text preprocessing required for your local model
-    // For example, lowercasing, removing punctuation, tokenization, etc.
+    // Lowercase the text, can further add more preprocessing steps
     return text.toLowerCase();
   }
   

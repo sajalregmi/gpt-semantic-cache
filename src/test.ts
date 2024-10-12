@@ -6,18 +6,18 @@ dotenv.config();
 async function main() {
   const cache = new SemanticGPTCache({
     embeddingOptions: {
-      type: 'openai', // Use OpenAI embeddings instead of 'local'
-      openAIApiKey: process.env.OPENAI_API_KEY || '', // OpenAI API key
+      type: 'openai',
+      openAIApiKey: process.env.OPENAI_API_KEY || '',
     },
     gptOptions: {
-      openAIApiKey: process.env.OPENAI_API_KEY || '', // OpenAI API key
-      model: 'gpt-4o-mini-2024-07-18', // Specify the GPT model (e.g., 'gpt-3.5-turbo' or 'gpt-4')
+      openAIApiKey: process.env.OPENAI_API_KEY || '',
+      model: 'gpt-4o-mini-2024-07-18',
       promptPrefix: 'You are a helpful assistant and a technical support assistant for a 3D printer, you will limit your result to 5 sentances', // Optional: Add a prefix to the prompt
     },
     cacheOptions: {
       redisUrl: process.env.REDIS_URL, // Redis server URL (e.g., 'redis://localhost:6379')
       similarityThreshold: 0.8, // Similarity threshold for cache hits
-      cacheTTL: 3600, // Cache entries expire after 1 hour,
+      cacheTTL: 86400, // Cache entries expire after 1 hour,
       embeddingSize: 1536,
     },
   });
