@@ -41,15 +41,15 @@ Here are several areas where this can be used:
 
 ## Installation
 
-\`\`\`bash
+```bash
 npm install gpt-semantic-cache
-\`\`\`
+```
 
 ## Quick Start
 
 Here's a quick example to get you started:
 
-\`\`\`javascript
+```javascript
 const { SemanticGPTCache } = require('gpt-semantic-cache');
 
 (async () => {
@@ -75,7 +75,7 @@ const { SemanticGPTCache } = require('gpt-semantic-cache');
   const response = await cache.query('What is the capital of France?');
   console.log(response);
 })();
-\`\`\`
+```
 
 ## Usage
 
@@ -83,7 +83,7 @@ const { SemanticGPTCache } = require('gpt-semantic-cache');
 
 To initialize the SemanticGPTCache, you need to provide configuration options for embeddings, GPT model, and caching.
 
-\`\`\`javascript
+```javascript
 const cache = new SemanticGPTCache({
   embeddingOptions: {
     type: 'local', // 'openai' or 'local'
@@ -104,7 +104,7 @@ const cache = new SemanticGPTCache({
 });
 
 await cache.initialize();
-\`\`\`
+```
 
 **Initialization Options Explained:**
 
@@ -128,10 +128,10 @@ await cache.initialize();
 
 To query the cache and get a response:
 
-\`\`\`javascript
+```javascript
 const response = await cache.query('Your query here', 'Additional context if any');
 console.log(response);
-\`\`\`
+```
 
 - If a similar query exists in the cache (based on the similarity threshold), the cached response is returned.
 - If no similar query is found, the GPT API is called, and the response is cached for future queries.
@@ -178,7 +178,7 @@ The caching mechanism works as follows:
 
 ### Using a Local Embedding Model
 
-\`\`\`javascript
+```javascript
 const cache = new SemanticGPTCache({
   embeddingOptions: {
     type: 'local',
@@ -200,19 +200,19 @@ await cache.initialize();
 
 const response = await cache.query('Tell me a joke.');
 console.log(response);
-\`\`\`
+```
 
 ### Adjusting Similarity Threshold
 
 You can adjust the `similarityThreshold` to control cache sensitivity:
 
-\`\`\`javascript
+```javascript
 // Higher threshold - only very similar queries will hit the cache
 cache.cacheOptions.similarityThreshold = 0.9;
 
 // Lower threshold - more queries will hit the cache, but responses may be less relevant
 cache.cacheOptions.similarityThreshold = 0.6;
-\`\`\`
+```
 
 ## License
 
