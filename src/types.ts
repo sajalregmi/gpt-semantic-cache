@@ -2,6 +2,7 @@ export interface EmbeddingOptions {
     type: 'openai' | 'local';
     openAIApiKey?: string;
     modelName?: string; // e.g., 'sentence-transformers/all-MiniLM-L6-v2' - use hugging face model name for local embeddings ( needs to be onnx compatible)
+    embeddingSize?: number;
   }
   
   

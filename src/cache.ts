@@ -10,12 +10,14 @@ export class Cache {
   private indexInitialized: boolean = false;
   private currentId: number = 0;
   private cacheTTL?: number; // in seconds
+  private redisKey: string;
 
   constructor(redisUrl?: string, embeddingSize?: number, cacheTTL?: number) {
     this.client = createClient({ url: redisUrl });
     this.embeddingSize = embeddingSize || 1536; // Default to OpenAI embedding size
     this.annIndex = new HierarchicalNSW('cosine', this.embeddingSize);
     this.cacheTTL = cacheTTL;
+    this.redisKey = `embeddings_${this.embeddingSize}`;
   }
 
   public async initialize() {
@@ -28,8 +30,10 @@ export class Cache {
     if (data.length > 0) {
       const vectors = data.map((e) => e.embedding);
       const ids = data.map((e) => e.id);
-      if (vectors[0].length !== this.embeddingSize) {
-        throw new Error(`Embedding size mismatch. Expected ${this.embeddingSize}, but got ${vectors[0].length}.`);
+
+      if (!vectors[0]) {
+        console.log('Error: Retrieved embedding is undefined or empty');
+        throw new Error('Embedding data is missing or invalid.');
       }
   
       this.annIndex.initIndex(vectors.length);
@@ -43,14 +47,12 @@ export class Cache {
         this.indexInitialized = true;
     }
   }
-  
 
   public async storeEmbedding(query: string, embedding: number[], response: string): Promise<void> {
-
     if (embedding.length !== this.embeddingSize) {
+        console.log("embedding size", embedding.length)
         throw new Error(`Invalid embedding size. Expected ${this.embeddingSize}, but got ${embedding.length}.`);
       }
-
     const id = this.currentId++;
     const timestamp = Date.now();
     const data: EmbeddingData = {
@@ -61,9 +63,9 @@ export class Cache {
       timestamp,
     };
 
-    await this.client.hSet('embeddings', id.toString(), JSON.stringify(data));
+    await this.client.hSet(this.redisKey, id.toString(), JSON.stringify(data));
     if (this.cacheTTL) {
-      await this.client.expire('embeddings', this.cacheTTL);
+      await this.client.expire(this.redisKey, this.cacheTTL);
     }
     if (!this.indexInitialized) {
         console.log("Initializing ANN index for the first embedding...");
@@ -81,6 +83,7 @@ export class Cache {
 
   public async searchSimilar(embedding: number[], k: number = 5): Promise<EmbeddingData[]> {
     if (embedding.length !== this.embeddingSize) {
+        console.log("embedding size from load index search similar", this.embeddingSize)
         throw new Error(`Invalid embedding size for search. Expected ${this.embeddingSize}, but got ${embedding.length}.`);
       }
     if (!this.indexInitialized) {
@@ -95,14 +98,14 @@ export class Cache {
     }
     const result = this.annIndex.searchKnn(embedding, adjustedK);
     const ids = result.neighbors.map((id) => id.toString());
-    const data = await this.client.hmGet('embeddings', ids);
+    const data = await this.client.hmGet(this.redisKey, ids);
     return data
       .filter((item) => item !== null)
       .map((item) => JSON.parse(item as string) as EmbeddingData);
   }
 
   public async getAllEmbeddings(): Promise<EmbeddingData[]> {
-    const data = await this.client.hGetAll('embeddings');
+    const data = await this.client.hGetAll(this.redisKey);
     return Object.values(data).map((item) => JSON.parse(item)) as EmbeddingData[];
   }
 

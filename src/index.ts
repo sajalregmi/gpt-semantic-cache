@@ -73,6 +73,8 @@ export class SemanticGPTCache {
     }
   }
 
+
+
   private buildPrompt(userQuery: string, additionalContext?: string): string {
     let prompt = '';
     if (this.gptOptions.promptPrefix) {
@@ -89,6 +91,4 @@ export class SemanticGPTCache {
   public async clearCache() {
     await this.cache.clearCache();
   }
-
-
 }

@@ -4,10 +4,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
+  
   const cache = new SemanticGPTCache({
     embeddingOptions: {
       type: 'openai',
+      modelName: 'Xenova/all-MiniLM-L6-v2',
       openAIApiKey: process.env.OPENAI_API_KEY || '',
+     // embeddingSize: 384,
     },
     gptOptions: {
       openAIApiKey: process.env.OPENAI_API_KEY || '',
@@ -18,7 +21,7 @@ async function main() {
       redisUrl: process.env.REDIS_URL, // Redis server URL (e.g., 'redis://localhost:6379')
       similarityThreshold: 0.8, // Similarity threshold for cache hits
       cacheTTL: 86400, // Cache entries expire after 1 hour,
-      embeddingSize: 1536,
+    // embeddingSize: 384,
     },
   });
   await cache.initialize();
@@ -29,7 +32,7 @@ async function main() {
     'Who is geoffrey hinto?',
   ];
 
-  let context = "I have an anycubic printer that seems off"
+  let context = "I need help with my 3d printer"
 
   for (const query of queries) {
     console.log(`\nUser Query: ${query}`);
@@ -38,7 +41,6 @@ async function main() {
   }
 
   // Optionally clear the cache at the end
-  // await cache.clearCache();
+   await cache.clearCache();
 }
-
 main();

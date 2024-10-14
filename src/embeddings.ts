@@ -72,9 +72,12 @@ export class Embeddings {
     this.embeddingPipeline = await transformers.pipeline('feature-extraction', modelName);
 
     // Set embedding size based on model output
-    const testEmbedding = await this.embeddingPipeline('Test');
-    this.embeddingSize = testEmbedding[0][0].length;
-    console.log(`Model loaded. Embedding size is ${this.embeddingSize}.`);
+    const testEmbedding = await this.embeddingPipeline('Test', { pooling: 'mean', normalize: true });
+    const testEmbeddingSize = testEmbedding.size;
+
+    console.log('test embeddings', testEmbedding);
+    this.embeddingSize = testEmbeddingSize;
+    console.log(`Model loaded. Embedding size is ${testEmbeddingSize}.`);
   }
 
   // Get local embeddings using the dynamically imported model
@@ -82,8 +85,8 @@ export class Embeddings {
     if (!this.embeddingPipeline) {
       throw new Error('Local embedding model is not initialized.');
     }
-    const embeddings = await this.embeddingPipeline(text, { pooling: 'mean', normalize: true });
-    // embeddings is a 2D array: [[embedding_vector]]
-    return embeddings[0][0];
-  }
+    const embeddingTensor = await this.embeddingPipeline(text, { pooling: 'mean', normalize: true });
+    const embeddingArray = embeddingTensor.data;
+    return embeddingArray;
+  }  
 }
