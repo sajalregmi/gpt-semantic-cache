@@ -118,7 +118,7 @@ export class Cache {
       .map((item) => JSON.parse(item as string) as EmbeddingData);
   }
 
-  public async getAllEmbeddings(): Promise<EmbeddingData[]> {
+public async getAllEmbeddings(): Promise<EmbeddingData[]> {
     const data = await this.client.hGetAll(this.redisKey);
     const EmbeddingsArray =  Object.values(data).map((item) => {
       const embeddingData = JSON.parse(item) as EmbeddingData;
@@ -128,10 +128,8 @@ export class Cache {
       }
       return embeddingData;
     });
-    console.log('type of EmbeddingsArray:', typeof EmbeddingsArray);
-   // return Object.values(data).map((item) => JSON.parse(item)) as EmbeddingData[];
    return EmbeddingsArray;
-  }
+}
 
   public async clearCache() {
     await this.client.del('embeddings');
