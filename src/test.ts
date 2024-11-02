@@ -5,9 +5,10 @@ dotenv.config();
 
 async function main() {
   
+  
   const cache = new SemanticGPTCache({
     embeddingOptions: {
-      type: 'openai',
+      type: 'local',
       modelName: 'Xenova/all-MiniLM-L6-v2',
       openAIApiKey: process.env.OPENAI_API_KEY || '',
      // embeddingSize: 384,
@@ -25,11 +26,14 @@ async function main() {
     },
   });
   await cache.initialize();
+  await cache.clearCache();
   const queries = [
     'My Anycubic 3d printer is not running',
     'My Anycubic 3d printer seems off, it is having a hard time running.',
     'My Anycubic 3d printer is not working properly',
     'Who is geoffrey hinto?',
+    'My Zotrax 3d printer is not running',
+    'Who is elon musk'
   ];
 
   let context = "I need help with my 3d printer"

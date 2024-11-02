@@ -8,16 +8,17 @@ export class SemanticGPTCache {
   private cache: Cache;
   private embeddings: Embeddings;
   private similarityThreshold: number;
-  private gptOptions: any;
+  private gptOptions: any;  
   private cacheTTL?: number;
+  private options: InitializationOptions; // Add this line
+
+
 
   constructor(options: InitializationOptions) {
+    console.log('Initializing SemanticGPTCache');
+    this.options = options;
     this.embeddings = new Embeddings(options.embeddingOptions);
-    this.cache = new Cache(
-      options.cacheOptions?.redisUrl,
-      this.embeddings.getEmbeddingSize(),
-      options.cacheOptions?.cacheTTL
-    );
+    console.log('Embeddings initialized');
     this.similarityThreshold = options.cacheOptions?.similarityThreshold || 0.8;
     this.gptOptions = options.gptOptions;
     this.cacheTTL = options.cacheOptions?.cacheTTL;
@@ -25,6 +26,12 @@ export class SemanticGPTCache {
 
   public async initialize() {
     await this.embeddings.initialize();
+    const embeddingSize = this.embeddings.getEmbeddingSize();
+    this.cache = new Cache(
+      this.options.cacheOptions?.redisUrl,
+      embeddingSize, // Use the correct embedding size
+      this.cacheTTL
+    );
     await this.cache.initialize();
   }
 
@@ -40,10 +47,9 @@ export class SemanticGPTCache {
         // Step 4: Cache miss - Call GPT API for fresh response
         const prompt = this.buildPrompt(userQuery, additionalContext);
         const response = await API.getGPTResponse(prompt, this.gptOptions);
-    
+
         // Step 5: Store the new query, embedding, and response in the cache
         await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
-    
         return response;
       }
 
@@ -65,8 +71,6 @@ export class SemanticGPTCache {
       console.log('Cache miss. Fetching response from GPT API.');
       const prompt = this.buildPrompt(userQuery, additionalContext);
       const response = await API.getGPTResponse(prompt, this.gptOptions);
-
-      // Store the new query and response in cache
       await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
 
       return response;

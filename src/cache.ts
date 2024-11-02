@@ -29,6 +29,8 @@ export class Cache {
     const data = await this.getAllEmbeddings();
     if (data.length > 0) {
       const vectors = data.map((e) => e.embedding);
+      
+
       const ids = data.map((e) => e.id);
 
       if (!vectors[0]) {
@@ -38,6 +40,11 @@ export class Cache {
   
       this.annIndex.initIndex(vectors.length);
       for (let i = 0; i < vectors.length; i++) {
+        if (!Array.isArray(vectors[i])) {
+          throw new Error('Embedding is not an array.');
+        }
+        
+
         this.annIndex.addPoint(vectors[i], ids[i]);
       }
       this.currentId = Math.max(...ids) + 1;
@@ -50,9 +57,16 @@ export class Cache {
 
   public async storeEmbedding(query: string, embedding: number[], response: string): Promise<void> {
     if (embedding.length !== this.embeddingSize) {
-        console.log("embedding size", embedding.length)
+        console.log("embedding size from store embedding", embedding.length)
         throw new Error(`Invalid embedding size. Expected ${this.embeddingSize}, but got ${embedding.length}.`);
       }
+
+      if (!Array.isArray(embedding)) {
+        console.log('Embedding is not an array. Converting to array...');
+        embedding = Array.from(embedding);
+      }
+      console.log("Storing embedding in cache as ", typeof embedding);
+
     const id = this.currentId++;
     const timestamp = Date.now();
     const data: EmbeddingData = {
@@ -69,7 +83,7 @@ export class Cache {
     }
     if (!this.indexInitialized) {
         console.log("Initializing ANN index for the first embedding...");
-        this.annIndex.initIndex(1000);  // Initialize with capacity 1000 - Assumption, needs to change
+        this.annIndex.initIndex(1000); 
         this.indexInitialized = true;
       }
       const currentCount = this.annIndex.getCurrentCount();
@@ -82,6 +96,7 @@ export class Cache {
   }
 
   public async searchSimilar(embedding: number[], k: number = 5): Promise<EmbeddingData[]> {
+    
     if (embedding.length !== this.embeddingSize) {
         console.log("embedding size from load index search similar", this.embeddingSize)
         throw new Error(`Invalid embedding size for search. Expected ${this.embeddingSize}, but got ${embedding.length}.`);
@@ -90,11 +105,10 @@ export class Cache {
       await this.loadIndex();
     }
     const totalElements = this.annIndex.getCurrentCount(); // Total number of elements in the ANN index
-    // Adjust `k` to not exceed the number of available elements in the index
     const adjustedK = Math.min(k, totalElements);
     if (adjustedK === 0) {
         console.log('No elements in the ANN index for search.');
-        return []; // Return an empty array instead of throwing an error
+        return [];
     }
     const result = this.annIndex.searchKnn(embedding, adjustedK);
     const ids = result.neighbors.map((id) => id.toString());
@@ -106,7 +120,17 @@ export class Cache {
 
   public async getAllEmbeddings(): Promise<EmbeddingData[]> {
     const data = await this.client.hGetAll(this.redisKey);
-    return Object.values(data).map((item) => JSON.parse(item)) as EmbeddingData[];
+    const EmbeddingsArray =  Object.values(data).map((item) => {
+      const embeddingData = JSON.parse(item) as EmbeddingData;
+      if (!Array.isArray(embeddingData.embedding)) {
+        embeddingData.embedding = Object.values(embeddingData.embedding).map(Number);
+        console.log('Embedding had to be converted');
+      }
+      return embeddingData;
+    });
+    console.log('type of EmbeddingsArray:', typeof EmbeddingsArray);
+   // return Object.values(data).map((item) => JSON.parse(item)) as EmbeddingData[];
+   return EmbeddingsArray;
   }
 
   public async clearCache() {

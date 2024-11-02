@@ -21,19 +21,20 @@ export class Embeddings {
     }
   }
 
-  // Initialize the embeddings pipeline (either OpenAI or local)
+
   public async initialize() {
     if (this.options.type === 'local') {
       await this.loadLocalModel(this.options.modelName!);
     }
   }
 
-  // Get the embedding size (default or based on model)
+
   public getEmbeddingSize(): number {
+    console.log('embedding size called', this.embeddingSize);
     return this.embeddingSize;
   }
 
-  // Main method to get embeddings (either via OpenAI or local)
+
   public async getEmbedding(text: string): Promise<number[]> {
     if (this.options.type === 'openai') {
       return await this.getOpenAIEmbedding(text);
@@ -44,7 +45,7 @@ export class Embeddings {
     }
   }
 
-  // Fetch embeddings from OpenAI
+
   private async getOpenAIEmbedding(text: string): Promise<number[]> {
     const response = await axios.post(
       'https://api.openai.com/v1/embeddings',
@@ -63,19 +64,16 @@ export class Embeddings {
     return response.data.data[0].embedding;
   }
 
-  // Dynamically import and load the local model from Hugging Face using `@xenova/transformers`
+
   private async loadLocalModel(modelName: string): Promise<void> {
     console.log(`Loading model ${modelName} from Hugging Face...`);
-
-    // Dynamic import for @xenova/transformers since it's an ES module
     const transformers = await import('@xenova/transformers');
     this.embeddingPipeline = await transformers.pipeline('feature-extraction', modelName);
 
-    // Set embedding size based on model output
     const testEmbedding = await this.embeddingPipeline('Test', { pooling: 'mean', normalize: true });
     const testEmbeddingSize = testEmbedding.size;
 
-    console.log('test embeddings', testEmbedding);
+    console.log('test embeddings sizze', testEmbeddingSize);
     this.embeddingSize = testEmbeddingSize;
     console.log(`Model loaded. Embedding size is ${testEmbeddingSize}.`);
   }
@@ -86,7 +84,8 @@ export class Embeddings {
       throw new Error('Local embedding model is not initialized.');
     }
     const embeddingTensor = await this.embeddingPipeline(text, { pooling: 'mean', normalize: true });
-    const embeddingArray = embeddingTensor.data;
+    let embeddingArray = embeddingTensor.data;
+     embeddingArray = Array.from(embeddingTensor.data);
     return embeddingArray;
   }  
 }
