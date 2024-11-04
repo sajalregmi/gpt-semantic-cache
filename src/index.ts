@@ -10,7 +10,7 @@ export class SemanticGPTCache {
   private similarityThreshold: number;
   private gptOptions: any;  
   private cacheTTL?: number;
-  private options: InitializationOptions; // Add this line
+  private options: InitializationOptions;
 
 
 
@@ -29,7 +29,7 @@ export class SemanticGPTCache {
     const embeddingSize = this.embeddings.getEmbeddingSize();
     this.cache = new Cache(
       this.options.cacheOptions?.redisUrl,
-      embeddingSize, // Use the correct embedding size
+      embeddingSize,
       this.cacheTTL
     );
     await this.cache.initialize();
@@ -43,12 +43,8 @@ export class SemanticGPTCache {
 
     if (candidates.length === 0) {
         console.log('No candidates found in the ANN index. Querying GPT API.');
-        
-        // Step 4: Cache miss - Call GPT API for fresh response
         const prompt = this.buildPrompt(userQuery, additionalContext);
         const response = await API.getGPTResponse(prompt, this.gptOptions);
-
-        // Step 5: Store the new query, embedding, and response in the cache
         await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
         return response;
       }
@@ -67,7 +63,6 @@ export class SemanticGPTCache {
       console.log('Cache hit with similarity:', highestSimilarity);
       return bestMatch.response;
     } else {
-      // Cache miss - Call GPT API
       console.log('Cache miss. Fetching response from GPT API.');
       const prompt = this.buildPrompt(userQuery, additionalContext);
       const response = await API.getGPTResponse(prompt, this.gptOptions);
@@ -90,8 +85,6 @@ export class SemanticGPTCache {
     prompt += userQuery;
     return prompt;
   }
-
-  // Method to manually update or flush the cache
   public async clearCache() {
     await this.cache.clearCache();
   }

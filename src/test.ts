@@ -1,5 +1,6 @@
 import { SemanticGPTCache } from './index';
 import dotenv from 'dotenv';
+import fs from 'fs';
 
 dotenv.config();
 
@@ -11,18 +12,16 @@ async function main() {
       type: 'local',
       modelName: 'Xenova/all-MiniLM-L6-v2',
       openAIApiKey: process.env.OPENAI_API_KEY || '',
-     // embeddingSize: 384,
     },
     gptOptions: {
       openAIApiKey: process.env.OPENAI_API_KEY || '',
       model: 'gpt-4o-mini-2024-07-18',
-      promptPrefix: 'You are a helpful assistant and a technical support assistant for a 3D printer, you will limit your result to 5 sentances', // Optional: Add a prefix to the prompt
+      promptPrefix: 'You are a helpful assistant and a technical support assistant for a 3D printer, you will limit your result to 5 sentences',
     },
     cacheOptions: {
-      redisUrl: process.env.REDIS_URL, // Redis server URL (e.g., 'redis://localhost:6379')
-      similarityThreshold: 0.8, // Similarity threshold for cache hits
-      cacheTTL: 86400, // Cache entries expire after 1 hour,
-    // embeddingSize: 384,
+      redisUrl: process.env.REDIS_URL,
+      similarityThreshold: 0.8, 
+      cacheTTL: 86400,
     },
   });
   await cache.initialize();
@@ -33,7 +32,8 @@ async function main() {
     'My Anycubic 3d printer is not working properly',
     'Who is geoffrey hinto?',
     'My Zotrax 3d printer is not running',
-    'Who is elon musk'
+    'Who is elon musk',
+    'who the hell is elon musk?'
   ];
 
   let context = "I need help with my 3d printer"
