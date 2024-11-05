@@ -1,10 +1,13 @@
 import { SemanticGPTCache } from './index';
 import dotenv from 'dotenv';
-import fs from 'fs';
 
-dotenv.config();
+
+
+
 
 async function main() {
+
+
   
   
   const cache = new SemanticGPTCache({
