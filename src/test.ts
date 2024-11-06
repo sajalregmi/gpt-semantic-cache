@@ -1,14 +1,10 @@
 import { SemanticGPTCache } from './index';
 import dotenv from 'dotenv';
+import fs from 'fs'
 
-
-
-
+dotenv.config()
 
 async function main() {
-
-
-  
   
   const cache = new SemanticGPTCache({
     embeddingOptions: {
@@ -40,13 +36,50 @@ async function main() {
   ];
 
   let context = "I need help with my 3d printer"
+  let i=0
+  let arr = 0
 
-  for (const query of queries) {
-    console.log(`\nUser Query: ${query}`);
-    const response = await cache.query(query, context);
-    console.log('Response:', response);
-  }
+  const filePath = './QA_Automotive.json';
 
+  // Read the JSON file asynchronously
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading the file:', err);
+      return;
+    }
+  
+    try {
+      // Parse the JSON data
+      const jsonData = JSON.parse(data);
+  
+      // Limit the iteration to the first 100 items
+      jsonData.slice(0, 5).forEach(item => {
+        console.log(item); // Do something with each item
+      });
+    } catch (parseError) {
+      console.error('Error parsing JSON data:', parseError);
+    }
+  });
+  // for (const query of queries) {
+  //   i++;
+  //   console.log(`\nUser Query: ${query}`);
+  //   // Start the timer
+  //   const startTime = performance.now();
+  //   // Execute the query
+  //   const response = await cache.query(query, context);
+  //   // Stop the timer
+  //   const endTime = performance.now();
+  //   // Calculate the response time
+  //   const responseTime = endTime - startTime;
+  //   arr += responseTime
+  
+  //   console.log('Response:', response);
+  //   console.log(`Response time: ${responseTime.toFixed(2)} ms`);
+  // }
+  
+  console.log("Api hit : " + cache.getApiHit())
+  console.log("Cache hit : "+cache.getCacheHit())
+  console.log("Average Response time : ",arr/7)
   // Optionally clear the cache at the end
    await cache.clearCache();
 }

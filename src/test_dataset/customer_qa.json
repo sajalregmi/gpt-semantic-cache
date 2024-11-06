@@ -1,0 +1,241 @@
+{
+    "dataset": [
+      {
+        "question": "How can I reset my password?",
+        "answer": "To reset your password, go to the login page and select 'Forgot Password'. Follow the instructions sent to your email."
+      },
+      {
+        "question": "What should I do if I forgot my password?",
+        "answer": "If you've forgotten your password, click 'Forgot Password' on the login page and check your email for reset instructions."
+      },
+      {
+        "question": "Can you help me recover my account password?",
+        "answer": "Yes, please use the 'Forgot Password' link on the login page, and we'll email you instructions to reset it."
+      },
+      {
+        "question": "How do I change my password?",
+        "answer": "To change your password, go to 'Account Settings' and select 'Change Password'. Enter your current password and choose a new one."
+      },
+      {
+        "question": "Where can I update my account password?",
+        "answer": "You can update your password in 'Account Settings' under the 'Change Password' section."
+      },
+      {
+        "question": "What should I do if I didn’t receive a password reset email?",
+        "answer": "If you didn't get a reset email, please check your spam folder. If it's not there, contact support for help."
+      },
+      {
+        "question": "How do I update my billing information?",
+        "answer": "To update billing information, go to 'Account Settings' > 'Billing' and enter your new payment details."
+      },
+      {
+        "question": "Where can I change my payment details?",
+        "answer": "You can change payment details under 'Billing' in 'Account Settings'."
+      },
+      {
+        "question": "Can I update my credit card on file?",
+        "answer": "Yes, you can update your credit card in the 'Billing' section of your account settings."
+      },
+      {
+        "question": "How do I cancel my subscription?",
+        "answer": "To cancel your subscription, go to 'Account Settings' > 'Subscription' and click 'Cancel Subscription'. Follow the prompts to confirm."
+      },
+      {
+        "question": "What’s the process to stop my subscription?",
+        "answer": "You can stop your subscription by selecting 'Cancel Subscription' under 'Account Settings' > 'Subscription'."
+      },
+      {
+        "question": "Can I pause my subscription instead of canceling?",
+        "answer": "Currently, we don't offer a pause option. However, you can cancel and restart anytime without penalties."
+      },
+      {
+        "question": "How do I delete my account?",
+        "answer": "To delete your account, go to 'Account Settings' > 'Privacy' and select 'Delete Account'. This action is permanent."
+      },
+      {
+        "question": "What should I do to permanently delete my account?",
+        "answer": "If you want to permanently delete your account, select 'Delete Account' under 'Privacy' in 'Account Settings'."
+      },
+      {
+        "question": "Can I recover my account after deletion?",
+        "answer": "No, once deleted, accounts are permanently removed and cannot be recovered."
+      },
+      {
+        "question": "How can I check my order status?",
+        "answer": "You can check your order status under 'Orders' in your account or by using the tracking link sent via email."
+      },
+      {
+        "question": "Where do I find the status of my recent order?",
+        "answer": "Order status is available under 'Orders' in your account dashboard or in your email confirmation."
+      },
+      {
+        "question": "Can you help me track my order?",
+        "answer": "Yes, track your order by clicking on the tracking link in your order confirmation email or by visiting 'Orders' in your account."
+      },
+      {
+        "question": "How do I return an item?",
+        "answer": "To return an item, visit 'Order History', select the order, and click 'Return Item'. Follow the prompts for a return label."
+      },
+      {
+        "question": "Can I return a product I purchased?",
+        "answer": "Yes, you can return most products by going to 'Order History', selecting the order, and following the return instructions."
+      },
+      {
+        "question": "Where do I start a return process?",
+        "answer": "Start a return by selecting the order in 'Order History' and following the on-screen return instructions."
+      },
+      {
+        "question": "How long does it take to process a refund?",
+        "answer": "Refunds are usually processed within 5-7 business days after the item is received at our warehouse."
+      },
+      {
+        "question": "What’s the expected time for my refund?",
+        "answer": "You should receive your refund within 5-7 business days once we receive your returned item."
+      },
+      {
+        "question": "When will I get my money back after returning a product?",
+        "answer": "Typically, refunds are processed 5-7 business days after we receive your returned product."
+      },
+      {
+        "question": "Can I change my shipping address after placing an order?",
+        "answer": "If your order hasn’t shipped, you can update the address in 'Order Details'. Contact support if you need assistance."
+      },
+      {
+        "question": "How do I update my delivery address for a recent order?",
+        "answer": "Update your delivery address in 'Order Details' if the order hasn't shipped, or contact support for help."
+      },
+      {
+        "question": "Can I update the shipping address after purchase?",
+        "answer": "Yes, as long as the order hasn't shipped, you can update the shipping address in 'Order Details'."
+      },
+      {
+        "question": "How do I apply a discount code?",
+        "answer": "You can apply a discount code at checkout by entering it in the 'Discount Code' field."
+      },
+      {
+        "question": "Where do I enter my promo code?",
+        "answer": "Enter your promo code in the 'Discount Code' field at checkout to apply it."
+      },
+      {
+        "question": "Can I use a discount code on sale items?",
+        "answer": "This depends on the terms of the promotion. Some discount codes can't be applied to sale items."
+      },
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept Visa, Mastercard, American Express, PayPal, and Apple Pay."
+      },
+      {
+        "question": "Can I pay using PayPal?",
+        "answer": "Yes, PayPal is one of the accepted payment methods."
+      },
+      {
+        "question": "Is Apple Pay available for checkout?",
+        "answer": "Yes, Apple Pay is an option during checkout."
+      },
+      {
+        "question": "How do I contact support?",
+        "answer": "You can reach support via email at support@example.com or through the live chat on our website."
+      },
+      {
+        "question": "Where can I find customer support contact details?",
+        "answer": "Customer support can be reached through email at support@example.com or via live chat on our site."
+      },
+      {
+        "question": "Can I chat with support for help?",
+        "answer": "Yes, live chat is available on our website for instant support."
+      },
+      {
+        "question": "How do I unsubscribe from marketing emails?",
+        "answer": "You can unsubscribe by clicking the 'Unsubscribe' link at the bottom of any marketing email."
+      },
+      {
+        "question": "Where can I stop receiving promotional emails?",
+        "answer": "To stop receiving emails, click 'Unsubscribe' at the bottom of a promotional email."
+      },
+      {
+        "question": "Can I opt out of promotional emails?",
+        "answer": "Yes, click the 'Unsubscribe' link in any promotional email to opt out."
+      },
+      {
+        "question": "Do you offer free shipping?",
+        "answer": "Yes, free shipping is available on orders over $50."
+      },
+      {
+        "question": "What’s the minimum order amount for free shipping?",
+        "answer": "Orders over $50 qualify for free shipping."
+      },
+      {
+        "question": "Is there a shipping fee for small orders?",
+        "answer": "Yes, a shipping fee applies to orders under $50."
+      },
+      {
+        "question": "How can I cancel my order?",
+        "answer": "If your order hasn’t shipped, you can cancel it under 'Order Details'. Otherwise, contact support for assistance."
+      },
+      {
+        "question": "Is it possible to cancel my recent order?",
+        "answer": "You can cancel your order in 'Order Details' if it hasn't shipped yet, or contact support."
+      },
+      {
+        "question": "How do I stop an order that I just placed?",
+        "answer": "If the order is still processing, you can cancel it under 'Order Details' in your account."
+      },
+      {
+        "question": "Can I get expedited shipping?",
+        "answer": "Yes, expedited shipping is available at checkout for an additional cost."
+      },
+      {
+        "question": "How do I choose faster shipping?",
+        "answer": "You can select expedited shipping during checkout."
+      },
+      {
+        "question": "Is overnight delivery available?",
+        "answer": "Overnight delivery is available for an additional fee, subject to location."
+      },
+      {
+        "question": "What’s your return policy?",
+        "answer": "We accept returns within 30 days of purchase. Items must be unused and in original packaging."
+      },
+      {
+        "question": "Can I return a product if I don't like it?",
+        "answer": "Yes, you can return it within 30 days, provided it's unused and in its original packaging."
+      },
+      {
+        "question": "Are returns accepted if I changed my mind?",
+        "answer": "Returns are accepted within 30 days as long as the item is unused and in original condition."
+      },
+      {
+        "question": "How can I contact you for bulk orders?",
+        "answer": "For bulk orders, please reach out via email at sales@example.com."
+      },
+      {
+        "question": "Do you offer discounts on large orders?",
+        "answer": "Yes, discounts are available on bulk orders. Contact us at sales@example.com for details."
+      },
+      {
+        "question": "Who should I contact for a bulk purchase inquiry?",
+        "answer": "For bulk inquiries, please email us at sales@example.com."
+      },
+      {
+        "question": "Where can I find your product warranty information?",
+        "answer": "Warranty information is available on each product page under 'Product Details'."
+      },
+      {
+        "question": "Is there a warranty on your products?",
+        "answer": "Yes, warranty details can be found under 'Product Details' on the product page."
+      },
+      {
+        "question": "What kind of warranty comes with your products?",
+        "answer": "Warranties vary by product. See 'Product Details' on each page for more information."
+      },
+      {
+        "question": "How do I know if my item is covered under warranty?",
+        "answer": "Warranty information can be found under 'Product Details' on each product's page."
+      },
+      {
+        "question": "Can I get a replacement under warranty?",
+        "answer": "If your product is under warranty, please contact support for assistance with a replacement."
+      }
+    ]
+  }
+  

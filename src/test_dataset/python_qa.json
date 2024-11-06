@@ -1,0 +1,177 @@
+{
+    "dataset": [
+      {
+        "question": "How do I declare a variable in Python?",
+        "answer": "In Python, you declare a variable by simply assigning a value to it, like `x = 5`."
+      },
+      {
+        "question": "How can I create a new variable in Python?",
+        "answer": "To create a variable in Python, assign a value to a name, like `variable_name = value`."
+      },
+      {
+        "question": "What’s the correct way to define a variable in Python?",
+        "answer": "Define a variable by using `name = value`, for example, `score = 100`."
+      },
+      {
+        "question": "How do I make a variable in Python?",
+        "answer": "In Python, you make a variable by assigning it a value with `=`. Example: `total = 10`."
+      },
+      {
+        "question": "Can you explain how to create variables in Python?",
+        "answer": "Creating a variable in Python involves using `name = value`. For instance, `height = 6`."
+      },
+      {
+        "question": "What data types are available in Python?",
+        "answer": "Python has several data types including integers, floats, strings, lists, tuples, dictionaries, and booleans."
+      },
+      {
+        "question": "What are the basic data types used in Python?",
+        "answer": "The basic data types in Python include int, float, str, list, tuple, dict, and bool."
+      },
+      {
+        "question": "Can you list Python's common data types?",
+        "answer": "Common data types in Python include integers, floats, strings, lists, tuples, dictionaries, and booleans."
+      },
+      {
+        "question": "Which data types does Python support?",
+        "answer": "Python supports data types such as int, float, str, list, tuple, dict, and bool."
+      },
+      {
+        "question": "How do I write a loop in Python?",
+        "answer": "In Python, you can use `for` loops or `while` loops. For example, `for i in range(5): print(i)`."
+      },
+      {
+        "question": "How can I use loops in Python?",
+        "answer": "You can use `for` loops or `while` loops in Python. For example, `for item in items: print(item)`."
+      },
+      {
+        "question": "Can you show an example of a loop in Python?",
+        "answer": "Here’s an example: `for i in range(3): print(i)` will print numbers from 0 to 2."
+      },
+      {
+        "question": "What is the syntax for a for loop in Python?",
+        "answer": "A `for` loop in Python uses `for variable in iterable`. Example: `for x in range(5): print(x)`."
+      },
+      {
+        "question": "What is an if statement in Python?",
+        "answer": "An `if` statement evaluates a condition and executes code if it's true. Example: `if x > 5: print('x is greater than 5')`."
+      },
+      {
+        "question": "How do I write an if condition in Python?",
+        "answer": "Use `if` followed by a condition. Example: `if score > 10: print('Win')`."
+      },
+      {
+        "question": "Can you explain how to use if-else in Python?",
+        "answer": "`if` checks a condition; `else` runs if the condition is false. Example: `if x < 5: print('Small'); else: print('Large')`."
+      },
+      {
+        "question": "How do I define a function in Python?",
+        "answer": "Define a function using `def`. Example: `def my_function(): print('Hello')`."
+      },
+      {
+        "question": "What’s the correct way to create a function in Python?",
+        "answer": "Use `def function_name():`. Example: `def greet(): print('Hi')`."
+      },
+      {
+        "question": "Can you explain how functions work in Python?",
+        "answer": "Functions in Python are created with `def` and are used to organize code. Example: `def add(a, b): return a + b`."
+      },
+      {
+        "question": "How do I handle errors in Python?",
+        "answer": "Use `try-except` blocks to handle errors. Example: `try: risky_code(); except: print('An error occurred')`."
+      },
+      {
+        "question": "What is the try-except block in Python?",
+        "answer": "`try-except` is used for error handling. Example: `try: code; except Exception: handle_error`."
+      },
+      {
+        "question": "How do I catch errors in Python?",
+        "answer": "You can catch errors with `try` and `except`. Example: `try: risky_code(); except: handle_error()`."
+      },
+      {
+        "question": "How can I handle exceptions in Python?",
+        "answer": "Use `try` for the main code and `except` to manage exceptions. Example: `try: open(file); except IOError: print('Error')`."
+      },
+      {
+        "question": "What is list comprehension in Python?",
+        "answer": "List comprehension provides a way to create lists in a single line. Example: `[x for x in range(5)]`."
+      },
+      {
+        "question": "How do I use list comprehension?",
+        "answer": "List comprehension syntax: `[expression for item in iterable]`. Example: `[i*2 for i in range(3)]`."
+      },
+      {
+        "question": "What is an example of list comprehension?",
+        "answer": "Example: `[x**2 for x in range(10)]` generates squares of numbers from 0 to 9."
+      },
+      {
+        "question": "How do I create a class in Python?",
+        "answer": "Create a class using `class ClassName:`. Example: `class Dog:`."
+      },
+      {
+        "question": "What is the syntax for defining a class in Python?",
+        "answer": "Define a class with `class Name:`. Example: `class Person:`."
+      },
+      {
+        "question": "How can I define a Python class?",
+        "answer": "To define a class, use `class ClassName:`. For example, `class Car:` defines a class named `Car`."
+      },
+      {
+        "question": "How do I import libraries in Python?",
+        "answer": "Use `import` to bring in libraries. Example: `import math`."
+      },
+      {
+        "question": "What’s the correct way to use imports in Python?",
+        "answer": "Use `import library_name` to use libraries, e.g., `import os`."
+      },
+      {
+        "question": "How can I include external libraries in Python?",
+        "answer": "Include libraries by using `import library_name`. Example: `import json`."
+      },
+      {
+        "question": "How do I read a file in Python?",
+        "answer": "Use `open` to read files. Example: `with open('file.txt') as f: print(f.read())`."
+      },
+      {
+        "question": "What’s the best way to open a file in Python?",
+        "answer": "You can open files with `open(filename)`. Example: `with open('file.txt') as file: data = file.read()`."
+      },
+      {
+        "question": "Can you show me how to read a text file?",
+        "answer": "To read a text file, use `with open('filename') as f: content = f.read()`."
+      },
+      {
+        "question": "How can I write to a file in Python?",
+        "answer": "Open a file in write mode with `open('file.txt', 'w')`. Example: `f.write('Hello')`."
+      },
+      {
+        "question": "What is the difference between lists and tuples?",
+        "answer": "Lists are mutable, tuples are immutable. Lists use `[]`, tuples use `()`."
+      },
+      {
+        "question": "Can you explain the difference between a list and a tuple?",
+        "answer": "Lists are changeable (mutable), while tuples are fixed (immutable). Lists use `[]`, tuples use `()`."
+      },
+      {
+        "question": "How do I check the length of a list?",
+        "answer": "Use `len()`. Example: `len([1, 2, 3])` returns `3`."
+      },
+      {
+        "question": "How can I find the number of items in a list?",
+        "answer": "To get the length, use `len()`. Example: `len(my_list)`."
+      },
+      {
+        "question": "How do I create a dictionary in Python?",
+        "answer": "Use `{key: value}` pairs. Example: `{'name': 'Alice', 'age': 25}`."
+      },
+      {
+        "question": "What is a dictionary in Python?",
+        "answer": "A dictionary stores key-value pairs. Example: `{'key': 'value'}`."
+      },
+      {
+        "question": "How do I add an item to a dictionary?",
+        "answer": "Assign a new key-value pair: `dict['new_key'] = value`."
+      }
+    ]
+  }
+  

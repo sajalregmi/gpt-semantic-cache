@@ -1,0 +1,161 @@
+{
+    "dataset": [
+      {
+        "question": "How can I troubleshoot a network connection issue?",
+        "answer": "First, check if your device is connected to the Wi-Fi or Ethernet. Restart your modem and router, and then check if the issue persists. If the problem continues, contact your internet service provider."
+      },
+      {
+        "question": "My internet connection is not working, how can I fix it?",
+        "answer": "Try restarting your modem and router. Check for loose cables, and ensure your device is connected to the correct network. If the issue persists, contact your service provider."
+      },
+      {
+        "question": "Why can't I connect to Wi-Fi?",
+        "answer": "Check if your Wi-Fi router is powered on and working. Ensure that you're within the range of your network. If the issue persists, try restarting your router or contacting technical support."
+      },
+      {
+        "question": "How do I fix my slow internet connection?",
+        "answer": "Restart your modem and router. Ensure no other devices are consuming too much bandwidth. You can also try using a wired connection for better speed."
+      },
+      {
+        "question": "My Wi-Fi is slow. What should I do?",
+        "answer": "Try moving closer to the router, restart your device, or reset the router. You can also limit the number of devices connected to your network or switch to a 5GHz network if available."
+      },
+      {
+        "question": "How can I improve my Wi-Fi speed?",
+        "answer": "Place the router in a central location in your home. Avoid placing it near walls or metal objects. Consider upgrading to a higher-speed plan or using a mesh Wi-Fi system."
+      },
+      {
+        "question": "Why is my computer running slow?",
+        "answer": "Try closing unnecessary applications, clearing your cache, or restarting your computer. It may also help to check for malware or free up disk space."
+      },
+      {
+        "question": "My computer is very slow, what can I do?",
+        "answer": "Close unused applications, disable startup programs, and run a system check for malware. Consider upgrading your RAM or hard drive if the problem persists."
+      },
+      {
+        "question": "How do I fix my computer’s performance?",
+        "answer": "Try restarting your computer, removing unnecessary files, running a system cleanup, or updating your operating system and drivers."
+      },
+      {
+        "question": "Why isn’t my printer working?",
+        "answer": "Check if your printer is properly connected to your computer or network. Ensure the printer has paper and ink/toner, and try restarting both your printer and computer."
+      },
+      {
+        "question": "How do I get my printer to work again?",
+        "answer": "Make sure your printer is connected, powered on, and has paper and ink. Check for error messages on the printer, and restart both the printer and your computer if necessary."
+      },
+      {
+        "question": "How do I set up my printer?",
+        "answer": "Follow the manufacturer's installation guide to connect your printer to your computer or Wi-Fi. Ensure you have installed the latest drivers for your operating system."
+      },
+      {
+        "question": "Why is my email not sending?",
+        "answer": "Check your internet connection, ensure the recipient’s email address is correct, and verify that the email size doesn’t exceed the limit. Also, check your email account’s server settings."
+      },
+      {
+        "question": "My emails are not going through, what should I do?",
+        "answer": "Ensure that you’re connected to the internet, check the email recipient’s address, and verify your SMTP settings for outgoing mail. If the issue persists, try restarting your email client."
+      },
+      {
+        "question": "How can I fix email sending issues?",
+        "answer": "Check your internet connection and SMTP settings. Ensure the email address is valid and not blocked. Restart your email client and try sending again."
+      },
+      {
+        "question": "My software is crashing. How can I fix it?",
+        "answer": "Ensure your software is up to date. Try restarting the application or your computer. If the problem continues, reinstall the software or check for system compatibility issues."
+      },
+      {
+        "question": "What should I do if my app keeps crashing?",
+        "answer": "Try updating the app, restarting your device, or clearing the app's cache. If the issue persists, uninstall and reinstall the app or contact the app's support team."
+      },
+      {
+        "question": "How can I fix an app that keeps crashing?",
+        "answer": "Ensure the app is updated to the latest version. Try restarting your device or clearing the app’s cache. If the issue persists, uninstall and reinstall the app."
+      },
+      {
+        "question": "Why is my device overheating?",
+        "answer": "Excessive use, running too many applications, or environmental factors can cause overheating. Try closing unnecessary applications and placing your device in a cooler environment."
+      },
+      {
+        "question": "What should I do if my phone is overheating?",
+        "answer": "Close any apps running in the background, remove any case if applicable, and place the phone in a cooler environment. Avoid using heavy applications that demand a lot of processing power."
+      },
+      {
+        "question": "How do I fix an overheating laptop?",
+        "answer": "Close unnecessary applications, clean the vents, and place your laptop on a hard, flat surface for better airflow. Consider using a cooling pad if necessary."
+      },
+      {
+        "question": "Why is my computer screen flickering?",
+        "answer": "Screen flickering can be caused by outdated drivers, loose cables, or hardware issues. Try updating your graphics driver or checking the display connections."
+      },
+      {
+        "question": "How can I fix screen flickering on my laptop?",
+        "answer": "Try updating your display driver, checking the connection between your monitor and laptop, or restarting your laptop. If the problem persists, consider contacting technical support."
+      },
+      {
+        "question": "My screen keeps flickering. How do I fix this?",
+        "answer": "Check the graphics driver for updates, ensure the display cable is connected properly, or restart your system to see if that resolves the issue."
+      },
+      {
+        "question": "How do I reset my router?",
+        "answer": "Locate the reset button on your router, press and hold it for about 10-15 seconds, and release. This will restore the router to factory settings."
+      },
+      {
+        "question": "How can I perform a router reset?",
+        "answer": "Find the reset button on your router, press and hold it for 10-15 seconds until the router restarts. This will restore factory settings."
+      },
+      {
+        "question": "How do I reset my Wi-Fi router?",
+        "answer": "Press and hold the reset button on the back of your router for 10-15 seconds to reset it to its default factory settings."
+      },
+      {
+        "question": "Why is my website not loading?",
+        "answer": "Check your internet connection, clear your browser cache, or try using a different device or browser. If the issue persists, check the website’s server status."
+      },
+      {
+        "question": "Why can't I access a website?",
+        "answer": "Ensure your internet connection is working and try clearing your browser cache. If the problem persists, check if the website is down or inaccessible in your region."
+      },
+      {
+        "question": "How can I fix a website not loading?",
+        "answer": "Check your internet connection, clear the cache in your browser, or try accessing the website from another browser or device."
+      },
+      {
+        "question": "How do I update my software?",
+        "answer": "Go to the software’s settings or the app store, and look for the 'Update' option. If the update is available, select it to download and install the latest version."
+      },
+      {
+        "question": "How can I update my app?",
+        "answer": "Visit the app store on your device, search for the app, and if an update is available, tap 'Update' to install the latest version."
+      },
+      {
+        "question": "How do I update my computer’s operating system?",
+        "answer": "Go to your device’s settings, select 'Update & Security' or 'System Preferences,' and click 'Check for Updates' to download the latest OS version."
+      },
+      {
+        "question": "How can I recover my password?",
+        "answer": "Click on the 'Forgot Password' link on the login page, and follow the instructions to reset your password using your registered email address."
+      },
+      {
+        "question": "How do I reset my password?",
+        "answer": "Use the 'Forgot Password' option on the login screen. Enter your registered email, and a password reset link will be sent to your inbox."
+      },
+      {
+        "question": "What should I do if I forget my password?",
+        "answer": "Click on the 'Forgot Password' option, provide your email address, and follow the instructions to reset your password."
+      },
+      {
+        "question": "How do I reinstall my operating system?",
+        "answer": "Back up your files, and use a recovery tool or installation media to reinstall the operating system. Follow the on-screen instructions to complete the process."
+      },
+      {
+        "question": "How can I reinstall Windows?",
+        "answer": "You can reinstall Windows by creating a bootable USB drive with the Windows installation tool. Backup your data and follow the installation steps."
+      },
+      {
+        "question": "How can I reinstall my software?",
+        "answer": "Uninstall the software from your system, then visit the software provider’s website or the app store to reinstall the latest version."
+      }
+    ]
+  }
+  

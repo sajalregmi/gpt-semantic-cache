@@ -1,0 +1,169 @@
+{
+    "dataset": [
+      {
+        "question": "How can I track my order?",
+        "answer": "You can track your order by using the tracking number provided in the confirmation email. Visit the shipping carrier’s website to see the status."
+      },
+      {
+        "question": "Where can I find the tracking number for my order?",
+        "answer": "The tracking number is available in the confirmation email we sent you after placing the order. It is also accessible in your order history."
+      },
+      {
+        "question": "How do I track my shipment?",
+        "answer": "To track your shipment, go to your order details page and click on the tracking number or use the provided link to check the shipment's status."
+      },
+      {
+        "question": "When will my order arrive?",
+        "answer": "Delivery times vary based on your location and the shipping method selected. You can check the expected delivery date on the tracking page."
+      },
+      {
+        "question": "How long will it take for my order to arrive?",
+        "answer": "The shipping time depends on your location and the selected shipping option. You can view the estimated delivery date in your order confirmation email."
+      },
+      {
+        "question": "What’s the expected delivery date for my order?",
+        "answer": "The expected delivery date is mentioned in the tracking information you received. Delivery time depends on the shipping method and location."
+      },
+      {
+        "question": "Can I change my shipping address after placing the order?",
+        "answer": "If your order hasn't shipped yet, you can modify the shipping address by contacting customer support immediately."
+      },
+      {
+        "question": "How can I update my delivery address?",
+        "answer": "If your order hasn’t shipped, you can update your address by contacting our customer support team or by modifying it in your account’s 'Order Details'."
+      },
+      {
+        "question": "Is it possible to update the shipping address after I’ve placed my order?",
+        "answer": "As long as the order hasn't shipped yet, you can update the address by contacting customer support immediately."
+      },
+      {
+        "question": "How do I cancel my order?",
+        "answer": "To cancel an order, go to your order details page. If your order hasn’t shipped, you can cancel it directly. Otherwise, contact our support team."
+      },
+      {
+        "question": "Can I cancel my order before it ships?",
+        "answer": "Yes, as long as your order hasn’t shipped yet, you can cancel it by visiting 'Order Details' or by contacting our support team."
+      },
+      {
+        "question": "What should I do if I want to cancel my order?",
+        "answer": "If you need to cancel your order, and it hasn't shipped yet, go to 'Order Details' or contact support for assistance."
+      },
+      {
+        "question": "When will I receive my order confirmation?",
+        "answer": "Your order confirmation will be sent via email within minutes of placing your order. If you didn’t receive it, check your spam folder or contact support."
+      },
+      {
+        "question": "I didn't receive my order confirmation email. What should I do?",
+        "answer": "Please check your spam folder. If you still can’t find it, contact customer support to resend the confirmation."
+      },
+      {
+        "question": "Why haven’t I received an order confirmation yet?",
+        "answer": "If you haven’t received your confirmation, check your spam folder or contact our customer service for assistance."
+      },
+      {
+        "question": "How can I update my order?",
+        "answer": "To update your order, please contact our support team as soon as possible. If your order hasn't shipped, we can assist with modifications."
+      },
+      {
+        "question": "Can I modify my order after placing it?",
+        "answer": "Orders can only be modified if they haven’t shipped yet. Contact customer support immediately if you need any changes."
+      },
+      {
+        "question": "What should I do if I made an error in my order?",
+        "answer": "If your order hasn’t shipped, please contact our support team immediately to make the necessary changes."
+      },
+      {
+        "question": "What is your return policy?",
+        "answer": "You can return items within 30 days of receiving them, as long as they are unused and in their original packaging. Please visit our 'Returns' page for more details."
+      },
+      {
+        "question": "How can I return an item?",
+        "answer": "To return an item, visit your 'Order History', select the item, and follow the return instructions provided there."
+      },
+      {
+        "question": "Can I return an item after opening it?",
+        "answer": "Items can be returned within 30 days as long as they are in unused condition and in their original packaging. Please check the return policy for exceptions."
+      },
+      {
+        "question": "What should I do if my order is damaged?",
+        "answer": "If your order is damaged, please contact our support team immediately with photos of the damage. We will assist with a return or replacement."
+      },
+      {
+        "question": "My product arrived damaged. How can I get a replacement?",
+        "answer": "If your product is damaged, please contact customer service with evidence of the damage, and we’ll arrange a return and replacement."
+      },
+      {
+        "question": "What if my order arrives with missing items?",
+        "answer": "If your order is missing items, contact our support team immediately with your order number, and we’ll resolve the issue quickly."
+      },
+      {
+        "question": "How do I track my package if it’s delayed?",
+        "answer": "Check the tracking number for the latest update. If you notice an extended delay, please contact our support team for further assistance."
+      },
+      {
+        "question": "What should I do if my order is delayed?",
+        "answer": "Check the tracking number for updates. If the order is delayed, contact customer support for more information on your shipment."
+      },
+      {
+        "question": "Why is my order taking longer to arrive than expected?",
+        "answer": "Delivery delays can occur due to weather conditions, carrier issues, or high order volumes. Contact customer support for more information on your order’s status."
+      },
+      {
+        "question": "Can I change the shipping method after I’ve placed my order?",
+        "answer": "Once the order has been placed, the shipping method can’t be changed. If you need to make a change, please contact support before the order ships."
+      },
+      {
+        "question": "How do I check the shipping status of my order?",
+        "answer": "You can check the status by visiting your 'Order Details' page or using the tracking number sent via email."
+      },
+      {
+        "question": "How do I find out if my order has shipped yet?",
+        "answer": "Visit your 'Order Details' page, where you can see if your order has shipped. You’ll also receive an email confirmation when it ships."
+      },
+      {
+        "question": "When will my item ship?",
+        "answer": "Your item will ship within the processing time mentioned on the product page. You’ll receive an email once it has shipped."
+      },
+      {
+        "question": "What do I do if I haven’t received my package?",
+        "answer": "Please check the tracking information first. If there’s no update, contact our support team, and we’ll investigate the issue."
+      },
+      {
+        "question": "I haven’t received my package, what should I do?",
+        "answer": "If your package hasn’t arrived, check the tracking status. If you still haven’t received it, please reach out to customer support for assistance."
+      },
+      {
+        "question": "How can I cancel a pending shipment?",
+        "answer": "If your order is still processing and hasn’t been shipped, contact our support team immediately to cancel the shipment."
+      },
+      {
+        "question": "Can I cancel my shipment once it’s in transit?",
+        "answer": "Unfortunately, once the shipment is in transit, it can’t be canceled. However, you can initiate a return once you receive the package."
+      },
+      {
+        "question": "Can I change my order after it has been processed?",
+        "answer": "Once your order is processed, it cannot be modified. Please contact support as soon as possible if you need changes before the item ships."
+      },
+      {
+        "question": "What’s the status of my order?",
+        "answer": "You can check the status of your order by visiting the 'Order Details' page in your account or using the tracking number provided."
+      },
+      {
+        "question": "How do I get a refund for my order?",
+        "answer": "Refunds are processed once your return is received and inspected. You’ll receive the refund within 5-7 business days after approval."
+      },
+      {
+        "question": "When will I receive my refund after returning an item?",
+        "answer": "Refunds typically take 5-7 business days to process after we receive the returned item."
+      },
+      {
+        "question": "Can I get a full refund if I return my order?",
+        "answer": "Yes, as long as the item is unused and within the return period, you are eligible for a full refund."
+      },
+      {
+        "question": "How can I track my return?",
+        "answer": "Once your return is processed, you’ll receive an email confirmation. You can also track the status of your return in your account’s 'Order History'."
+      }
+    ]
+  }
+  

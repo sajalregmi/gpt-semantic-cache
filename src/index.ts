@@ -11,6 +11,8 @@ export class SemanticGPTCache {
   private gptOptions: any;  
   private cacheTTL?: number;
   private options: InitializationOptions;
+  private cacheHit : number;
+  private apiHit : number;
 
 
 
@@ -22,6 +24,8 @@ export class SemanticGPTCache {
     this.similarityThreshold = options.cacheOptions?.similarityThreshold || 0.8;
     this.gptOptions = options.gptOptions;
     this.cacheTTL = options.cacheOptions?.cacheTTL;
+    this.cacheHit = 0;
+    this.apiHit = 0
   }
 
   public async initialize() {
@@ -34,6 +38,13 @@ export class SemanticGPTCache {
     );
     await this.cache.initialize();
   }
+  public getCacheHit(){
+    return this.cacheHit
+
+  }
+  public getApiHit(){
+    return this.apiHit
+  }
 
   public async query(userQuery: string, additionalContext?: string): Promise<string> {
     const queryEmbedding = await this.embeddings.getEmbedding(userQuery);
@@ -42,8 +53,10 @@ export class SemanticGPTCache {
     const candidates = await this.cache.searchSimilar(queryEmbedding, 5);
 
     if (candidates.length === 0) {
+         
         console.log('No candidates found in the ANN index. Querying GPT API.');
         const prompt = this.buildPrompt(userQuery, additionalContext);
+        this.apiHit += 1
         const response = await API.getGPTResponse(prompt, this.gptOptions);
         await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
         return response;
@@ -61,9 +74,11 @@ export class SemanticGPTCache {
     }
     if (highestSimilarity >= this.similarityThreshold && bestMatch) {
       console.log('Cache hit with similarity:', highestSimilarity);
+      this.cacheHit += 1
       return bestMatch.response;
     } else {
       console.log('Cache miss. Fetching response from GPT API.');
+      this.apiHit += 1
       const prompt = this.buildPrompt(userQuery, additionalContext);
       const response = await API.getGPTResponse(prompt, this.gptOptions);
       await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
