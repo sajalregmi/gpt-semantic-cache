@@ -13,6 +13,8 @@ export class SemanticGPTCache {
   private options: InitializationOptions;
   private cacheHit : number;
   private apiHit : number;
+  private positiveHit : number;
+  private negativeHit : number;
 
 
 
@@ -26,6 +28,8 @@ export class SemanticGPTCache {
     this.cacheTTL = options.cacheOptions?.cacheTTL;
     this.cacheHit = 0;
     this.apiHit = 0
+    this.positiveHit = 0
+    this.negativeHit = 0
   }
 
   public async initialize() {
@@ -45,21 +49,24 @@ export class SemanticGPTCache {
   public getApiHit(){
     return this.apiHit
   }
+  public getPositiveHit(){
+    return this.positiveHit
+  }
+  public getNegativeHit(){
+    return this.negativeHit
+  }
 
   public async query(userQuery: string, additionalContext?: string): Promise<string> {
     const queryEmbedding = await this.embeddings.getEmbedding(userQuery);
-
-
     const candidates = await this.cache.searchSimilar(queryEmbedding, 5);
 
     if (candidates.length === 0) {
-         
         console.log('No candidates found in the ANN index. Querying GPT API.');
-        const prompt = this.buildPrompt(userQuery, additionalContext);
+        // const prompt = this.buildPrompt(userQuery, additionalContext);
         this.apiHit += 1
-        const response = await API.getGPTResponse(prompt, this.gptOptions);
-        await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
-        return response;
+        // const response = await API.getGPTResponse(prompt, this.gptOptions);
+        await this.cache.storeEmbedding(userQuery, queryEmbedding, "some Response");
+        return "No hit";
       }
 
     let bestMatch = null;
@@ -68,6 +75,7 @@ export class SemanticGPTCache {
     for (const candidate of candidates) {
       const similarity = Similarity.cosineSimilarity(queryEmbedding, candidate.embedding);
       if (similarity > highestSimilarity) {
+        console.log(userQuery)
         highestSimilarity = similarity;
         bestMatch = candidate;
       }
@@ -75,15 +83,26 @@ export class SemanticGPTCache {
     if (highestSimilarity >= this.similarityThreshold && bestMatch) {
       console.log('Cache hit with similarity:', highestSimilarity);
       this.cacheHit += 1
-      return bestMatch.response;
+      let prompt = `For the following two questions return True if those questions are similar and have similar response. and Return False if they are not.
+Your response will be limited on True or False without any explanation or any other additional text. Just one word answer, wither true, or false.
+questions are : ${userQuery} and ${bestMatch.query}
+`     
+      const response = await API.getGPTResponse(prompt,this.gptOptions)
+      console.log(response)
+      if(response === 'True'){
+        this.positiveHit +=1
+      }
+      else{
+        this.negativeHit +=1
+      }
+      return "hit";
     } else {
       console.log('Cache miss. Fetching response from GPT API.');
       this.apiHit += 1
-      const prompt = this.buildPrompt(userQuery, additionalContext);
-      const response = await API.getGPTResponse(prompt, this.gptOptions);
-      await this.cache.storeEmbedding(userQuery, queryEmbedding, response);
-
-      return response;
+      // const prompt = this.buildPrompt(userQuery, additionalContext);
+      // const response = await API.getGPTResponse(prompt, this.gptOptions);
+      await this.cache.storeEmbedding(userQuery, queryEmbedding, "some response");
+      return "no hit";
     }
   }
 
