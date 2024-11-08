@@ -1,15 +1,10 @@
 import { SemanticGPTCache } from './index';
 import dotenv from 'dotenv';
 
-
-
-
+dotenv.config();
 
 async function main() {
 
-
-  
-  
   const cache = new SemanticGPTCache({
     embeddingOptions: {
       type: 'local',

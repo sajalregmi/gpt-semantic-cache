@@ -1,0 +1,5 @@
+.env
+src/test.ts
+src/model_cache
+src/model_cache/*
+node_modules
